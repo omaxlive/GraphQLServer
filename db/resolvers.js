@@ -107,7 +107,7 @@ const resolvers = {
     // Advanced search
     topCustomers: async () => {
       const customers = await Order.aggregate([
-        { $match: { estado: 'COMPLETED' } },
+        { $match: { state: 'COMPLETED' } },
         {
           $group: {
             _id: '$customer',
@@ -134,7 +134,7 @@ const resolvers = {
     },
     topSellers: async () => {
       const sellers = await Order.aggregate([
-        { $match: { estado: 'COMPLETED' } },
+        { $match: { state: 'COMPLETED' } },
         {
           $group: {
             _id: '$seller',
